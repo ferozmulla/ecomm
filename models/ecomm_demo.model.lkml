@@ -16,6 +16,11 @@ explore: order_items {
     sql_on: ${order_items.order_id} = ${orders.order_id} ;;
     relationship: many_to_one
   }
+  join: users {
+    type: left_outer
+    sql_on: ${order_items.user_id} = ${users.id} ;;
+    relationship: many_to_one
+  }
 }
 
 explore: distribution_centers {}
