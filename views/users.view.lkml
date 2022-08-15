@@ -88,4 +88,9 @@ view: users {
     type: count
     drill_fields: [id, last_name, first_name]
   }
+
+  dimension: full_name {
+    type: string
+    sql: ${first_name} || ${last_name} ;;
+  }
 }
